@@ -17,51 +17,59 @@
     End Sub
     Sub AddBooking()
 
-        Console.Write("Adding a new booking, enter the details below: ")
+        Console.Clear()
+        Console.WriteLine("Adding a new booking, enter the details below: ")
+        Console.WriteLine()
+        Console.Write("Client's name: ")
+        Console.ReadLine()
 
     End Sub
     Sub Menu()
 
+        Dim selection As Char
 
-        Console.ForegroundColor = ConsoleColor.Green
-        Console.WriteLine("Welcome")
-        Console.ForegroundColor = ConsoleColor.Blue
-        Console.WriteLine("---------------------------------------------")
-        Console.ForegroundColor = ConsoleColor.DarkRed
-        Console.WriteLine("Total complete hour:                        -")
-        Console.WriteLine("Total Income:                               -")
-        Console.ForegroundColor = ConsoleColor.Blue
-        Console.WriteLine("---------------------------------------------")
-        Console.WriteLine()
-        Console.ForegroundColor = ConsoleColor.Green
-        Console.WriteLine("Select from one of the following menu options:")
-        Console.WriteLine()
-        Console.ForegroundColor = ConsoleColor.DarkRed
-        Console.WriteLine(" (A) Add a booking")
-        Console.WriteLine(" (B) View all incomplete bookings")
-        Console.WriteLine(" (C) View all complete bookings")
-        Console.WriteLine(" (D) Check incomplete bookings for the next 7 days")
-        Console.WriteLine()
-        Console.WriteLine(" (E) View incomplete booking's details")
-        Console.WriteLine(" (F) Edit incomplete booking details")
-        Console.WriteLine()
-        Console.WriteLine(" (G) Remove a booking")
-        Console.WriteLine(" (H) Complete a booking")
-        Console.WriteLine()
-        Console.WriteLine(" (I) View business card")
-        Console.WriteLine()
-        Console.WriteLine(" (X) Exit")
+        Do
 
-        Select Case Console.ReadKey.KeyChar
+            Console.Clear()
+            Console.ForegroundColor = ConsoleColor.Green
+            Console.WriteLine("Welcome")
+            Console.ForegroundColor = ConsoleColor.Blue
+            Console.WriteLine("---------------------------------------------")
+            Console.ForegroundColor = ConsoleColor.DarkRed
+            Console.WriteLine("Total complete hour:                        -")
+            Console.WriteLine("Total Income:                               -")
+            Console.ForegroundColor = ConsoleColor.Blue
+            Console.WriteLine("---------------------------------------------")
+            Console.WriteLine()
+            Console.ForegroundColor = ConsoleColor.Green
+            Console.WriteLine("Select from one of the following menu options:")
+            Console.WriteLine()
+            Console.ForegroundColor = ConsoleColor.DarkRed
+            Console.WriteLine(" (A) Add a booking")
+            Console.WriteLine(" (B) View all incomplete bookings")
+            Console.WriteLine(" (C) View all complete bookings")
+            Console.WriteLine(" (D) Check incomplete bookings for the next 7 days")
+            Console.WriteLine()
+            Console.WriteLine(" (E) View incomplete booking's details")
+            Console.WriteLine(" (F) Edit incomplete booking details")
+            Console.WriteLine()
+            Console.WriteLine(" (G) Remove a booking")
+            Console.WriteLine(" (H) Complete a booking")
+            Console.WriteLine()
+            Console.WriteLine(" (I) View business card")
+            Console.WriteLine()
+            Console.WriteLine(" (X) Exit")
 
+            selection = Console.ReadKey(True).KeyChar.ToString.ToUpper
 
+            Select Case selection
 
-            Case "A"
+                Case "A"
+                    AddBooking()
 
-                AddBooking()
+            End Select
 
-        End Select
-        ' Console.ReadLine()
+        Loop Until selection = "X"
 
     End Sub
     Sub CompainyInfoCreation()

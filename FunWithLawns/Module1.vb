@@ -113,11 +113,11 @@
         Console.ReadKey()
         Console.Clear()
 
-        If Not IO.File .Exists  "CompanyInfo.txt"
 
-            CompainyInfoCreation()
 
-            Menu()
+        CompainyInfoCreation()
+
+        Menu()
 
 
 
